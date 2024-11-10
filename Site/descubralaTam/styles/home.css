@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    filter: brightness(50%);
+}
+
+.banner p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente no texto */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    text-align: center;
+}
+
+.banner-overlay p {
+    font-size: 1.5em;
+    font-weight: bold;
+    max-width: 80%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.containerHighlights{
+    display: flex;
+    gap:200px;
+    background-color: #f8f8f8;
+}
+
+
+.highlights {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin-top: 40px;
+    margin-left: 9%;
+}
+
+.highlight-item {
+    position: relative;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+}
+
+.highlight-item img {
+    width: 500px;
+    right: 500px;
+    border-radius: 8px;
+    filter: brightness(50%);
+}
+
+.highlight-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Botão de Call to Action */
+.section_descubra {
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.section-button {
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    right: 200px;
+    padding: 20px;
+    background-color: #ffd966;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    color: #333;
+    cursor: pointer;
+}
+
+.section-button img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.section-button:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+}
+
+.section-button p {
+    font-weight: bold;
+}

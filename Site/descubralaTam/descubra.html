@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/descubra.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html">
+            <img src="./imgs/logoSemFundo.png" alt="Logo">
+        </a> </div>
+        <nav class="navbar">
+            <a href="./index.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a href="#">SOBRE NÓS</a>
+            <a href="./login.html">LOGIN</a>
+        </nav>
+    </header> 
+
+    <section class="primeiroContato">
+        <p>Primeiro nos diga</p> <br>
+        <p>Qual pais da América Latina Gostaria de viajar?</p>
+        <input type="text" class="input" id="input_escolher_pais"> <br>
+
+        <div class="redirecionamento">
+            <p>Não consegue pensar em nenhum país?<span class="cliqueAqui"> Clique aqui</span> e vamos te ajudar</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a href="#">Sobre o autor/dev</a></li>
+                <li><a href="#">Fale conosco</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+                <li><a href="#">Sorteador de viagem</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+  const inputField = document.getElementById("input_escolher_pais");
+
+  // adiciona o evento de click no enter
+ inputField.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        // testa que não esta vazio
+        event.preventDefault();
+
+        // executa a busca
+        executarAcao();
+    }
+});
+
+function executarAcao() {
+    const escolher_pais = input_escolher_pais.value
+
+    if(escolher_pais.toLowerCase() == "brasil"){
+      return  window.location.href = "./telaBrasil.html"
+    }
+    if(escolher_pais.toLowerCase() == "argentina"){
+      return  window.location.href = "./telaArgentina.html"
+    }
+}
+</script>

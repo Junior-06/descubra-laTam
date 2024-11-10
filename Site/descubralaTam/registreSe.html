@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/registreSe.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html">
+            <img src="./imgs/logoSemFundo.png" alt="Logo">
+        </a> </div>
+        <nav class="navbar">
+            <a href="./index.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a href="#">SOBRE NÓS</a>
+            <a href="./login.html">LOGIN</a>
+        </nav>
+    </header>
+
+<section class="banner">
+    <div class="conteudoBanner">
+        <img src="./imgs/adicionar-usuario.png" alt="Ícone de usuário" class="user-icon">
+        <div class="textoLogin">
+            <b><p>Digite o nome de usuário</p></b>
+            <input type="text" placeholder="Usuário">
+            <b> <p class="email">Insira seu E-mail</p></b>
+            <input type="text" placeholder="E-mail">
+            <b><p class="senha">Insira a senha</p></b>
+            <input type="password" placeholder="Senha">
+            <b><p class="senha">Confirme a senha</p></b>
+            <input type="password" placeholder="Digite a mesma senha"> <br>
+            <button onclick="registrar()" class="botao" >
+                Prossiga
+            </button>
+          </div>      
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a href="#">Sobre o autor/dev</a></li>
+                <li><a href="#">Fale conosco</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+                <li><a href="#">Sorteador de viagem</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

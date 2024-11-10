@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f0f0f0; /* Cor de fundo do footer */
+    border-top: 1px solid #ddd; /* Linha no topo do footer */
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1em;
+    color: #007bff; /* Cor do título */
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: #333; /* Cor dos links */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+        color:#0068d6
+}

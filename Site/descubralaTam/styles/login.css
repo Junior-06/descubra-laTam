@@ -1,0 +1,59 @@
+.banner{
+    width: 1360px; 
+    height: 76vh;
+    background-image: url("https://mediaim.expedia.com/destination/1/bfd6e0b8f76719843ee133d5415a936e.jpg");
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+}
+
+
+.conteudoBanner{
+   margin-top: 0.5%;
+    width: 500px;
+   height: 500px;
+    background-color: rgba(0, 0, 0, 0.811);
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin-left: 31%;
+}
+
+.user-icon {
+    width: 100px; 
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.textoLogin{
+    margin-top: 170px;
+
+}
+
+.textoLogin input{
+    width: 50%;
+    border-radius: 15px;
+    border: 2px solid #00000091;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 2px 0 2px 10px;
+}
+
+.senha{
+    margin-top: 30px;
+}
+
+.perguntaUsuario{
+    margin-top: 50px;
+}
+
+a{
+    color: inherit; 
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a:hover, a:focus, a:active {
+    color: #0068d6;
+}
