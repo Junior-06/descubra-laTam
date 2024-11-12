@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Descubra</title>
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/descubra.css">
@@ -72,6 +72,21 @@ function executarAcao() {
     }
     if(escolher_pais.toLowerCase() == "argentina"){
       return  window.location.href = "./telaArgentina.html"
+    }
+    if(escolher_pais.toLowerCase() == "guiana" || escolher_pais.toLowerCase() == "guiana francesa"){
+      return  window.location.href = "./telaGuiana.html"
+    }
+    if(escolher_pais.toLowerCase() == "bolivia" || escolher_pais.toLowerCase() == "bolívia"){
+      return window.location.href = "./telaBolivia.html"
+    }
+    if(escolher_pais.toLowerCase() == "chile"){
+      return window.location.href = "./telaChile.html"
+    }
+    if(escolher_pais.toLowerCase() == "colombia" || escolher_pais.toLowerCase() == "colômbia"){
+      return window.location.href = "./telaColombia.html"
+    }
+    if(escolher_pais.toLowerCase() == "equador"){
+      return window.location.href = "./telaEquador.html"
     }
 }
 </script>
