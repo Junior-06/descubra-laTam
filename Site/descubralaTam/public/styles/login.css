@@ -59,3 +59,14 @@ a{
 a:hover, a:focus, a:active {
     color: #0068d6;
 }
+
+.botao{
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 20%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #ffffff;  
+    color: rgb(0, 0, 0);
+}

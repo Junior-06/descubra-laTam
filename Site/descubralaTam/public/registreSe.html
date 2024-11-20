@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/registreSe.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html">
+            <img src="./imgs/logoSemFundo.png" alt="Logo">
+        </a> </div>
+        <nav class="navbar">
+            <a href="./index.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a href="#">SOBRE NÓS</a>
+            <a href="./login.html">LOGIN</a>
+        </nav>
+    </header>
+
+<section class="banner">
+    <div class="conteudoBanner">
+        <img src="./imgs/adicionar-usuario.png" alt="Ícone de usuário" class="user-icon">
+        <div class="textoLogin">
+            <b><p>Digite o nome de usuário</p></b>
+            <input type="text" placeholder="Usuário" id="cadastro_nome_input">
+            <b> <p class="email">Insira seu E-mail</p></b>
+            <input type="text" placeholder="E-mail" id="cadastro_email_input">
+            <b><p class="senha">Insira a senha</p></b>
+            <input type="password" placeholder="Senha" id="cadastro_senha_input">
+            <b><p class="senha">Confirme a senha</p></b>
+            <input type="password" placeholder="Digite a mesma senha" id="confirmacao_senha_input"> <br>
+            <button onclick="cadastrar()" class="botao">
+                Prossiga
+            </button>
+          </div>      
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a href="#">Sobre o autor/dev</a></li>
+                <li><a href="#">Fale conosco</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+                <li><a href="#">Sorteador de viagem</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    
+    function cadastrar() {
+        // aguardar();
+        var nomeVar = cadastro_nome_input.value;
+        var emailVar = cadastro_email_input.value;
+        var senhaVar = cadastro_senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            alert('ATENÇÃO! As senha digitadas deve ser iguais');
+            return;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    setTimeout(() => {
+                        window.location = "./login.html";
+                    }, "2000");
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+        return false;
+    }
+</script>
