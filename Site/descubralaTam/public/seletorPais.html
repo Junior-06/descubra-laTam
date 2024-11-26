@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste perfil de viagem</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/seletorPais.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html">
+            <img src="./imgs/logoSemFundo.png" alt="Logo">
+        </a> </div>
+        <nav class="navbar">
+            <a href="./index.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a href="#">SOBRE NÓS</a>
+            <a href="./login.html">LOGIN</a>
+        </nav>
+    </header> 
+
+<section class="banner">    
+    
+    <div class="box pergunta1" style="display: block;" id="div_pergunta1">
+    <img src="./imgs/machupicchu2.jpg" class="imagem">
+    <p class="pergunta">Que tipo de viagem você prefere</p>
+    <button onclick="resposta('a1')">Praia e relaxamento</button> <br>
+    <button onclick="resposta('b1')">Aventura e exploração</button> <br>
+    <button onclick="resposta('c1')">Cultura e história</button> <br>
+    <button onclick="resposta('d1')">Natureza e ecoturismo</button> <br>
+</div>
+
+<div class="box pergunta2" style="display: none;" id="div_pergunta2">
+    <img src="./imgs/transporteImg.jpeg" class="imagem">
+    <p class="pergunta">Como você prefere se locomover no destino?</p>
+    <button onclick="resposta('a2')">De carro ou transporte particular</button> <br>
+    <button onclick="resposta('b2')">A pé, explorando a cidade</button> <br>
+    <button onclick="resposta('c2')">Usando transporte público para vivenciar o local</button> <br>
+    <button onclick="resposta('d2')">Aventura e natureza: de bicicleta, caminhadas ou até trilhas</button> <br>
+</div>
+
+<div class="box pergunta3" style="display: none;" id="div_pergunta3">
+    <img src="./imgs/dinheiroImg.jpg" class="imagem">
+    <p class="pergunta">Quanto você pretende desenbolsar na viagem?</p>
+    <button onclick="resposta('a3')">Muito pouco, quero um pais barato com atrações gratuitas</button> <br>
+    <button onclick="resposta('b3')">Pouco, um pais barato com opções de passeios baratos</button> <br>
+    <button onclick="resposta('c3')">Medio, um pais em que eu possa comer e vivenciar experiencias novas com um custo aceitavel</button> <br>
+    <button onclick="resposta('d3')">Muito, qualquer pais cabe em meu bolso</button> <br>
+</div>
+
+<div class="box pergunta4" style="display: none;" id="div_pergunta4">
+    <img src="./imgs/hospedagem.webp" class="imagem">
+    <p class="pergunta">Qual é o tipo de hospedagem que mais lhe atrai?</p>
+    <button onclick="resposta('a4')">Resorts ou hotéis de luxo</button> <br>
+    <button onclick="resposta('b4')">Hostels ou hospedagens mais econômicas</button> <br>
+    <button onclick="resposta('c4')">Hostels ou pousadas</button> <br>
+    <button onclick="resposta('d4')">Camping ou aluguel de casas no meio da natureza</button> <br>
+</div>
+</section>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a href="#">Sobre o autor/dev</a></li>
+                <li><a href="#">Fale conosco</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+                <li><a href="#">Sorteador de viagem</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+
+    const respostasUsuarios = []
+    
+    function resposta(escolhaUsuario){
+        
+        const pergunta1 =  div_pergunta1.style
+        const pergunta2 = div_pergunta2.style
+        const pergunta3 = div_pergunta3.style
+        const pergunta4 = div_pergunta4.style
+
+        if(
+            escolhaUsuario == "a1" ||
+            escolhaUsuario == "b1" ||
+            escolhaUsuario == "c1" ||
+            escolhaUsuario == "d1"
+        ){
+            pergunta1.display = 'none'
+            pergunta2.display = 'block'
+
+            respostasUsuarios.push(escolhaUsuario)
+        }
+
+        if(
+            escolhaUsuario == "a2" ||
+            escolhaUsuario == "b2" ||
+            escolhaUsuario == "c2" ||
+            escolhaUsuario == "d2"
+        ){
+            pergunta2.display = 'none'
+            pergunta3.display = 'block'
+            respostasUsuarios.push(escolhaUsuario)
+        }
+
+        if(
+            escolhaUsuario == "a3" ||
+            escolhaUsuario == "b3" ||
+            escolhaUsuario == "c3" ||
+            escolhaUsuario == "d3"
+        ){
+            pergunta3.display = 'none'
+            pergunta4.display = 'block'
+            respostasUsuarios.push(escolhaUsuario)
+        }
+
+        if(
+            escolhaUsuario == "a4" ||
+            escolhaUsuario == "b4" ||
+            escolhaUsuario == "c4" ||
+            escolhaUsuario == "d4"
+        ){
+            pergunta4.display = 'block'
+            respostasUsuarios.push(escolhaUsuario)
+
+            if( sessionStorage.ID_USUARIO == null){
+                return alert("Para saber os paises é necessario fazer login!")
+            }
+
+              return window.location.href = "./dashBoard.html"
+        }
+
+
+
+    }    
+
+</script>

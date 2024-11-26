@@ -1,6 +1,6 @@
 .banner{
     width: 100%;
-    height: 88vh;
+    height: 550px;
     background-image: url("https://mediaim.expedia.com/destination/1/bfd6e0b8f76719843ee133d5415a936e.jpg");
     background-size: cover; 
     background-position: center;
@@ -11,7 +11,7 @@
 
 
 .conteudoBanner{
-   margin-top: 30px;
+   margin-top: 20px;
     width: 500px;
    height: 500px;
     background-color: rgba(0, 0, 0, 0.811);
