@@ -1,3 +1,5 @@
+*{    background-color: #f0f0f0; /* Cor de fundo do footer */}
+
 footer {
     display: flex;
     justify-content: space-around;
@@ -8,26 +10,31 @@ footer {
 
 .footer-section {
     text-align: left;
+    background-color: #f0f0f0; /* Cor de fundo do footer */
 }
 
 .footer-section h3 {
     font-size: 1em;
     color: #007bff; /* Cor do título */
     margin-bottom: 10px;
+    background-color: #f0f0f0; /* Cor de fundo do footer */
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
+    background-color: #f0f0f0; 
 }
 
 .footer-section li {
     margin-bottom: 5px;
+    background-color: #f0f0f0; 
 }
 
 .footer-section a {
     color: #333; /* Cor dos links */
     text-decoration: none;
+    background-color: #f0f0f0; /* Cor de fundo do footer */
 }
 
 .footer-section a:hover {
