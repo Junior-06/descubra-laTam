@@ -81,12 +81,18 @@
 
     const respostasUsuarios = []
     
+    let resposta1  = ""
+    let resposta2 = ""
+    let resposta3 = ""
+    let resposta4 = ""
+    
     function resposta(escolhaUsuario){
         
         const pergunta1 =  div_pergunta1.style
         const pergunta2 = div_pergunta2.style
         const pergunta3 = div_pergunta3.style
         const pergunta4 = div_pergunta4.style
+
 
         if(
             escolhaUsuario == "a1" ||
@@ -96,6 +102,8 @@
         ){
             pergunta1.display = 'none'
             pergunta2.display = 'block'
+
+            resposta1 = escolhaUsuario
 
             respostasUsuarios.push(escolhaUsuario)
         }
@@ -109,6 +117,8 @@
             pergunta2.display = 'none'
             pergunta3.display = 'block'
             respostasUsuarios.push(escolhaUsuario)
+
+            resposta2 = escolhaUsuario
         }
 
         if(
@@ -120,6 +130,8 @@
             pergunta3.display = 'none'
             pergunta4.display = 'block'
             respostasUsuarios.push(escolhaUsuario)
+
+            resposta3 = escolhaUsuario
         }
 
         if(
@@ -130,6 +142,8 @@
         ){
             pergunta4.display = 'block'
             respostasUsuarios.push(escolhaUsuario)
+
+            resposta4 = escolhaUsuario
 
             if( sessionStorage.ID_USUARIO == null){
                 return alert("Para saber os paises é necessario fazer login!")
