@@ -7,6 +7,7 @@
     <link rel="icon" href="./imgs/logo2.png">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
+   <link rel="stylesheet" href="./styles/dashBoard.css">
 </head>
 <body>
     <header>
@@ -20,6 +21,35 @@
         </nav>
     </header>
 
+
+  <section class="banner">  
+    <div class="sectionGrafico">
+          <div class="grafico">
+            <canvas id="myChart" class="canvas"></canvas>
+          </div>
+        </div>
+
+        
+        <div class="textoPerfil">
+            <div class="imagem">
+            <img src="./imgs/aventureiro.webp">
+        </div>
+        <div class="perfil">
+            <p>Perfil Aventureiro</p>
+        </div>
+        <div class="div_top5">
+            <p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+            <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
+            <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
+            <li><span class="paisLink"><a href="./telaArgentina.html">3. Argentina</a></span></li>
+            <li><span class="paisLink"><a href="./telaCostaRica.html">4. Costa Rica</a></span></li>
+            <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
+        </div>
+        </div>
+       
+    </section> 
+
+
     <footer>
         <div class="footer-section">
             <h3>Institucional:</h3>
@@ -30,9 +60,33 @@
         <div class="footer-section">
             <h3>Conteúdo para você:</h3>
             <ul>
+
+
                 <li><a href="./descubra.html">Guia de destinos</a></li>
             </ul>
         </div>
     </footer>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+   const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['Aventureiro', 'Explorador Cultural', ' Turista Luxuoso', 'Viajante Econômico'],
+    datasets: [{
+      data: [2, 1, 0, 1],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
