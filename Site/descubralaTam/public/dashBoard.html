@@ -1,92 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashBoard</title>
-    <link rel="icon" href="./imgs/logo2.png">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/footer.css">
-   <link rel="stylesheet" href="./styles/dashBoard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dashBoard</title>
+  <link rel="icon" href="./imgs/logo2.png">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/dashBoard.css">
 </head>
-<body>
-    <header>
-        <div class="logo"><a href="./index.html">
-            <img src="./imgs/logoSemFundo.png" alt="Logo">
-        </a> </div>
-        <nav class="navbar">
-            <a href="./index.html">INÍCIO</a>
-            <a href="./sobreDev.html">SOBRE O AUTOR</a>
-            <a href="./dashBoard.html"></a>
-        </nav>
-    </header>
+
+<body onload="coletarDados()">
+  <header>
+    <div class="logo"><a href="./index.html">
+        <img src="./imgs/logoSemFundo.png" alt="Logo">
+      </a> </div>
+    <nav class="navbar">
+      <a href="./index.html">INÍCIO</a>
+      <a href="./sobreDev.html">SOBRE O AUTOR</a>
+      <a href="./dashBoard.html"></a>
+    </nav>
+  </header>
 
 
-  <section class="banner">  
+  <section class="banner">
     <div class="sectionGrafico">
-          <div class="grafico">
-            <canvas id="myChart" class="canvas"></canvas>
-          </div>
-        </div>
-
-        
-        <div class="textoPerfil">
-            <div class="imagem">
-            <img src="./imgs/aventureiro.webp">
-        </div>
-        <div class="perfil">
-            <p>Perfil Aventureiro</p>
-        </div>
-        <div class="div_top5">
-            <p class="top5">Top 5 paises para visitar com base no seu perfil</p>
-            <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
-            <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
-            <li><span class="paisLink"><a href="./telaArgentina.html">3. Argentina</a></span></li>
-            <li><span class="paisLink"><a href="./telaCostaRica.html">4. Costa Rica</a></span></li>
-            <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
-        </div>
-        </div>
-       
-    </section> 
+      <div class="grafico">
+        <canvas id="myChart" class="canvas"></canvas>
+      </div>
+    </div>
 
 
-    <footer>
-        <div class="footer-section">
-            <h3>Institucional:</h3>
-            <ul>
-                <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Conteúdo para você:</h3>
-            <ul>
+    <div class="textoPerfil">
+      <div class="imagem">
+        <img src="./imgs/aventureiro.webp">
+      </div>
+      <div class="perfil">
+        <p>Perfil Aventureiro</p>
+      </div>
+      <div class="div_top5">
+        <p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaArgentina.html">3. Argentina</a></span></li>
+        <li><span class="paisLink"><a href="./telaCostaRica.html">4. Costa Rica</a></span></li>
+        <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
+      </div>
+    </div>
+
+  </section>
 
 
-                <li><a href="./descubra.html">Guia de destinos</a></li>
-            </ul>
-        </div>
-    </footer>
+  <footer>
+    <div class="footer-section">
+      <h3>Institucional:</h3>
+      <ul>
+        <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Conteúdo para você:</h3>
+      <ul>
+
+
+        <li><a href="./descubra.html">Guia de destinos</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
+
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-   const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: ['Aventureiro', 'Explorador Cultural', ' Turista Luxuoso', 'Viajante Econômico'],
-    datasets: [{
-      data: [2, 1, 0, 1],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
+  function coletarDados() {
+    var idUsuario = JSON.parse(sessionStorage.ID_USUARIO)
+
+    fetch(`/dash/coletarDados/${idUsuario}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
       }
-    }
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        if (resposta.ok) {
+
+          resposta.json().then(json => {
+            const dataValue = [];
+            var pontosA = 0;
+            var pontosB = 0;
+            var pontosC = 0;
+            var pontosD = 0;
+
+            for (var x = 1; x <= 4; x++) {
+              if (json[0].pergunta1 == `a${x}`) pontosA += 1;
+              if (json[0].pergunta1 == `b${x}`) pontosB += 1;
+              if (json[0].pergunta1 == `c${x}`) pontosC += 1;
+              if (json[0].pergunta1 == `d${x}`) pontosD += 1;
+
+              if (json[0].pergunta2 == `a${x}`) pontosA += 1;
+              if (json[0].pergunta2 == `b${x}`) pontosB += 1;
+              if (json[0].pergunta2 == `c${x}`) pontosC += 1;
+              if (json[0].pergunta2 == `d${x}`) pontosD += 1;
+
+              if (json[0].pergunta3 == `a${x}`) pontosA += 1;
+              if (json[0].pergunta3 == `b${x}`) pontosB += 1;
+              if (json[0].pergunta3 == `c${x}`) pontosC += 1;
+              if (json[0].pergunta3 == `d${x}`) pontosD += 1;
+
+              if (json[0].pergunta4 == `a${x}`) pontosA += 1;
+              if (json[0].pergunta4 == `b${x}`) pontosB += 1;
+              if (json[0].pergunta4 == `c${x}`) pontosC += 1;
+              if (json[0].pergunta4 == `d${x}`) pontosD += 1;
+            }
+
+            dataValue.push(pontosA, pontosB, pontosC, pontosD);
+
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: ['Aventureiro', 'Explorador Cultural', ' Turista Luxuoso', 'Viajante Econômico'],
+                datasets: [{
+                  data: dataValue,
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          })
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
   }
-});
 </script>

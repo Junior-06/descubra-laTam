@@ -145,15 +145,45 @@
 
             resposta4 = escolhaUsuario
 
+            inserirRespostas();
+
             if( sessionStorage.ID_USUARIO == null){
                 return alert("Para saber os paises é necessario fazer login!")
             }
 
               return window.location.href = "./dashBoard.html"
         }
+    }
+    
+    function inserirRespostas() {
+        var idUsuario = JSON.parse(sessionStorage.ID_USUARIO)
 
+        fetch("/dash/inserirRespostas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                pergunta1Server:resposta1,
+                pergunta2Server:resposta2,
+                pergunta3Server:resposta3,
+                pergunta4Server:resposta4,
+                idUsuarioServer:idUsuario
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
+                if (resposta.ok) {
+                    console.log("resposta registrada")
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
 
-    }    
+    }
 
 </script>
