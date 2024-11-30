@@ -13,13 +13,14 @@
 
 <body onload="coletarDados()">
   <header>
-    <div class="logo"><a href="./index.html">
+    <div class="logo"><a href="./home.html">
         <img src="./imgs/logoSemFundo.png" alt="Logo">
       </a> </div>
     <nav class="navbar">
-      <a href="./index.html">INÍCIO</a>
-      <a href="./sobreDev.html">SOBRE O AUTOR</a>
-      <a href="./dashBoard.html"></a>
+      <a id="perfilViajanteHeader" href="./seletorPais.html">PERFIL DE VIAJANTE</a>
+      <a id="inicio" href="./home.html">INÍCIO</a>
+      <a href="./descubra.html">DESCUBRA</a>
+      <a id="sobreDev" href="sobreDevLogado.html">SOBRE O DEV</a>
     </nav>
   </header>
 
@@ -32,21 +33,14 @@
     </div>
 
 
-    <div class="textoPerfil">
+    <div class="textoPerfil" id="div_caixaTextoPerfil">
       <div class="imagem">
-        <img src="./imgs/aventureiro.webp">
+        <img id="imagemPerfil" src="./imgs/viajanteAventureiro.webp">
       </div>
-      <div class="perfil">
-        <p>Perfil Aventureiro</p>
+      <div class="perfil" id="perfil">
+        <p id="texto_perfil">Perfil Aventureiro</p>
       </div>
-      <div class="div_top5">
-        <p class="top5">Top 5 paises para visitar com base no seu perfil</p>
-        <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
-        <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
-        <li><span class="paisLink"><a href="./telaArgentina.html">3. Argentina</a></span></li>
-        <li><span class="paisLink"><a href="./telaCostaRica.html">4. Costa Rica</a></span></li>
-        <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
-      </div>
+      <div class="div_top5" id="div_top5">
     </div>
 
   </section>
@@ -56,7 +50,7 @@
     <div class="footer-section">
       <h3>Institucional:</h3>
       <ul>
-        <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
+        <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -115,6 +109,118 @@
               if (json[0].pergunta4 == `c${x}`) pontosC += 1;
               if (json[0].pergunta4 == `d${x}`) pontosD += 1;
             }
+
+            let textoPerfil = texto_perfil
+            let caixaTextoPerfil = perfil
+            let imagem = imagemPerfil
+            if(pontosA > pontosB && pontosA > pontosC && pontosA > pontosD){
+              textoPerfil.innerHTML = `Aventureiro`
+              imagem.src = './imgs/viajanteAventureiro.webp'
+              div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaArgentina.html">3. Argentina</a></span></li>
+        <li><span class="paisLink"><a href="./telaCostaRica.html">4. Costa Rica</a></span></li>
+        <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
+      </div>`
+            }
+            if(pontosB > pontosA && pontosB > pontosC && pontosB > pontosD){
+              textoPerfil.innerHTML = `Viajante cultural`
+               caixaTextoPerfil.style = 'width: width: 240px;'
+               imagem.src = './imgs/viajanteCultural.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaMexico.html">1. Mexico</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaColombia.html">3. Colombia</a></span></li>
+        <li><span class="paisLink"><a href="./telaGuatemala.html">4. Guatemala</a></span></li>
+        <li><span class="paisLink"><a href="./telaArgentina.html">5. Argentina</a></span></li>
+      </div>`
+            }
+            if(pontosC > pontosB && pontosC > pontosA && pontosC > pontosD){
+              textoPerfil.innerHTML = `Turista Luxuoso`
+               caixaTextoPerfil.style = 'width: 240px;'
+                imagem.src = './imgs/viajanteLuxuoso.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaUruguai.html">1. Uruguai</a></span></li>
+        <li><span class="paisLink"><a href="./telaArgentina.html">2. Argentina</a></span></li>
+        <li><span class="paisLink"><a href="./telaBrasil.html">3. Brasil</a></span></li>
+        <li><span class="paisLink"><a href="./telaChile.html">4. Chile</a></span></li>
+        <li><span class="paisLink"><a href="./telaCostaRica.html">5. Costa Rica</a></span></li>
+      </div>`
+            }
+            if(pontosD > pontosB && pontosD > pontosC && pontosD > pontosA){
+              textoPerfil.innerHTML = `Viajante Econômico`
+               caixaTextoPerfil.style = 'width: 240px;'
+                 imagem.src = './imgs/viajanteEconomico.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaBolivia.html">1. Bolivia</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">2. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaGuatemala.html">3. Guatemala</a></span></li>
+        <li><span class="paisLink"><a href="./telaColombia.html">4. Colombia</a></span></li>
+        <li><span class="paisLink"><a href="./telaNicaragua.html">5. Nicaragua</a></span></li>
+      </div>`
+            }
+            if((pontosA == pontosB && pontosA == pontosC && pontosA == pontosD) || pontosC == pontosD || pontosA == pontosB){   
+              textoPerfil.innerHTML = `Viajante versátil`
+               caixaTextoPerfil.style = 'width: 300px;'
+                         imagem.src = './imgs/viajanteVersatil.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaChile.html">1. Chile</a></span></li>
+        <li><span class="paisLink"><a href="./telaMexico.html">2. Mexico</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">3. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaColombia.html">4. Colombia</a></span></li>
+        <li><span class="paisLink"><a href="./telaBrasil.html">5. Brasil</a></span></li>
+      </div>`
+            }
+
+            if(pontosA == pontosC || pontosC == pontosA){
+              textoPerfil.innerHTML = `Explorador de Luxo`
+               caixaTextoPerfil.style = 'width: 300px;'
+                         imagem.src = './imgs/viajanteLuxuoso.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaUruguai.html">1. Uruguai</a></span></li>
+        <li><span class="paisLink"><a href="./telaChile.html">2. Chile</a></span></li>
+        <li><span class="paisLink"><a href="./telaCosta Rica.html">3. Costa Rica</a></span></li>
+        <li><span class="paisLink"><a href="./telaGuiana.html">4. Guiana</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">5. Peru</a></span></li>
+      </div>`
+            }
+            if(pontosA == pontosD || pontosD == pontosA){
+              textoPerfil.innerHTML = `Aventureiro Econômico`
+               caixaTextoPerfil.style = 'width: 300px;'
+                         imagem.src = './imgs/viajanteEconomico.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaNicaragua.html">1. Nicaragua</a></span></li>
+        <li><span class="paisLink"><a href="./telaBolivia.html">2. Bolivia</a></span></li>
+        <li><span class="paisLink"><a href="./telaEquador Rica.html">3. Equador Rica</a></span></li>
+        <li><span class="paisLink"><a href="./telaGuatemala.html">4. Guatemala</a></span></li>
+        <li><span class="paisLink"><a href="./telaSuriname.html">5. Suriname</a></span></li>
+      </div>`
+            }
+            if(pontosB == pontosC || pontosC == pontosB){
+              textoPerfil.innerHTML = `Culturalmente Luxuoso`
+               caixaTextoPerfil.style = 'width: 300px;'
+                         imagem.src = './imgs/viajanteLuxuoso.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaColombia.html">1. Colombia</a></span></li>
+        <li><span class="paisLink"><a href="./telaPanama.html">2. Panama</a></span></li>
+        <li><span class="paisLink"><a href="./telaMexico.html">3. Mexico</a></span></li>
+        <li><span class="paisLink"><a href="./telaRepublicaDominicana.html">4. Republica Dominicana</a></span></li>
+        <li><span class="paisLink"><a href="./telaCuba.html">5. Cuba</a></span></li>
+      </div>`
+    }
+            if(pontosB == pontosD || pontosD == pontosB){
+              textoPerfil.innerHTML = `Explorador Cultural Econômico`
+               caixaTextoPerfil.style = 'width: 300px;'
+                         imagem.src = './imgs/viajanteEconomico.webp'
+               div_top5.innerHTML = `<p class="top5">Top 5 paises para visitar com base no seu perfil</p>
+        <li><span class="paisLink"><a href="./telaParaguai.html">1. Paraguai</a></span></li>
+        <li><span class="paisLink"><a href="./telaHonduras.html">2. Honduras</a></span></li>
+        <li><span class="paisLink"><a href="./telaPeru.html">3. Peru</a></span></li>
+        <li><span class="paisLink"><a href="./telaelSalvador.html">4. el Salvador</a></span></li>
+        <li><span class="paisLink"><a href="./telaNicaragua.html">5. Nicaragua</a></span></li>
+      </div>`
+    }
 
             dataValue.push(pontosA, pontosB, pontosC, pontosD);
 

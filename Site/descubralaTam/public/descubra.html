@@ -1,91 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra</title>
-    <link rel="icon" href="./imgs/logo2.png">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/descubra.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubra</title>
+  <link rel="icon" href="./imgs/logo2.png">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/descubra.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo"><a href="./index.html">
-            <img src="./imgs/logoSemFundo.png" alt="Logo">
-        </a> </div>
-        <nav class="navbar">
-            <a href="./index.html">INÍCIO</a>
-            <a href="./descubra.html">DESCUBRA</a>
-            <a href="#">SOBRE O AUTOR</a>
-            <a href="./login.html">LOGIN</a>
-        </nav>
-    </header> 
+  <header>
+    <div class="logo"><a id="iconeDirecionamento" href="./home.html">
+        <img src="./imgs/logoSemFundo.png" alt="Logo">
+      </a> </div>
+    <nav class="navbar">
+      <a id="perfilViajanteHeader" href="./seletorPais.html">PERFIL DE VIAJANTE</a>
+      <a id="inicio" href="./home.html">INÍCIO</a>
+      <a href="./descubra.html">DESCUBRA</a>
+      <a id="sobreDev" href="sobreDevLogado.html">SOBRE O DEV</a>
+      <a id="loginHeader" href="./login.html">LOGIN</a>
+    </nav>
+  </header>
 
-    <section class="primeiroContato">
-        <p>Primeiro nos diga</p> <br>
-        <p>Qual pais da América Latina Gostaria de viajar?</p>
-        <input type="text" class="input" id="input_escolher_pais"> <br>
+  <section class="primeiroContato">
+    <p>Primeiro nos diga</p> <br>
+    <p>Qual pais da América Latina Gostaria de viajar?</p>
+    <input type="text" class="input" id="input_escolher_pais"> <br>
 
-        <div class="redirecionamento">
-            <p>Não consegue pensar em nenhum país?<span class="cliqueAqui"><a href="./seletorPais.html"> Clique aqui</a></span> e vamos te ajudar</p>
-        </div>
-    </section>
+    <div class="redirecionamento" id="div_redirecionamento">
+      <p>Não consegue pensar em nenhum país? Faça<span class="cliqueAqui"><a href="./login.html"> Login</a></span> e
+        vamos te ajudar a escolher seu destino</p>
+    </div>
+  </section>
 
 
-    <footer>
-      <div class="footer-section">
-          <h3>Institucional:</h3>
-          <ul>
-              <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
-          </ul>
-      </div>
-      <div class="footer-section">
-          <h3>Conteúdo para você:</h3>
-          <ul>
-              <li><a href="./descubra.html">Guia de destinos</a></li>
-          </ul>
-      </div>
+  <footer>
+    <div class="footer-section">
+      <h3>Institucional:</h3>
+      <ul>
+        <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Conteúdo para você:</h3>
+      <ul>
+        <li><a id="descubraFooter" href="./descubra.html">Guia de destinos</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
+
 </html>
 <script>
   const inputField = document.getElementById("input_escolher_pais");
 
+  let textoInicio = inicio
+  let sobreMim = sobreDev
+  let perfilViajante = perfilViajanteHeader
+  let login = loginHeader
+  let icone = iconeDirecionamento
+  let sobre = sobreFooter
+  if (sessionStorage.ID_USUARIO == null) {
+    perfilViajante.style = 'display: none'
+    textoInicio.href = './index.html'
+    sobreMim.href = './sobreDev.html'
+    icone.href = './index.html'
+    sobre.href = './sobreDev.html'
+  }
+
+  if(sessionStorage.ID_USUARIO != null){
+    div_redirecionamento.style = 'display: none'
+    login.style = 'display: none'
+  }
+
   // adiciona o evento de click no enter
- inputField.addEventListener("keydown", function(event) {
+  inputField.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        // testa que não esta vazio
-        event.preventDefault();
+      // testa que não esta vazio
+      event.preventDefault();
 
-        // executa a busca
-        executarAcao();
+      // executa a busca
+      executarAcao();
     }
-});
+  });
 
-function executarAcao() {
+  function executarAcao() {
     const escolher_pais = input_escolher_pais.value
 
-    if(escolher_pais.toLowerCase() == "brasil"){
-      return  window.location.href = "./telaBrasil.html"
+    if (escolher_pais.toLowerCase() == "brasil") {
+      return window.location.href = "./telaBrasil.html"
     }
-    if(escolher_pais.toLowerCase() == "argentina"){
-      return  window.location.href = "./telaArgentina.html"
+    if (escolher_pais.toLowerCase() == "argentina") {
+      return window.location.href = "./telaArgentina.html"
     }
-    if(escolher_pais.toLowerCase() == "guiana" || escolher_pais.toLowerCase() == "guiana francesa"){
-      return  window.location.href = "./telaGuiana.html"
+    if (escolher_pais.toLowerCase() == "guiana" || escolher_pais.toLowerCase() == "guiana francesa") {
+      return window.location.href = "./telaGuiana.html"
     }
-    if(escolher_pais.toLowerCase() == "bolivia" || escolher_pais.toLowerCase() == "bolívia"){
+    if (escolher_pais.toLowerCase() == "bolivia" || escolher_pais.toLowerCase() == "bolívia") {
       return window.location.href = "./telaBolivia.html"
     }
-    if(escolher_pais.toLowerCase() == "chile"){
+    if (escolher_pais.toLowerCase() == "chile") {
       return window.location.href = "./telaChile.html"
     }
-    if(escolher_pais.toLowerCase() == "colombia" || escolher_pais.toLowerCase() == "colômbia"){
+    if (escolher_pais.toLowerCase() == "colombia" || escolher_pais.toLowerCase() == "colômbia") {
       return window.location.href = "./telaColombia.html"
     }
-    if(escolher_pais.toLowerCase() == "equador"){
+    if (escolher_pais.toLowerCase() == "equador") {
       return window.location.href = "./telaEquador.html"
     }
-}
+  }
 </script>

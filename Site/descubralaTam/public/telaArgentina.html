@@ -13,16 +13,17 @@
 
 <body>
     <header>
-        <div class="logo"><a href="./index.html">
-                <img src="./imgs/logoSemFundo.png" alt="Logo">
-            </a> </div>
+        <div class="logo"><a id="iconeDirecionamento" href="./home.html">
+            <img src="./imgs/logoSemFundo.png" alt="Logo">
+          </a> </div>
         <nav class="navbar">
-            <a href="./index.html">INÍCIO</a>
-            <a href="./descubra.html">DESCUBRA</a>
-            <a href="#">SOBRE O AUTOR</a>
-            <a href="./login.html">LOGIN</a>
+          <a id="perfilViajanteHeader" href="./seletorPais.html">PERFIL DE VIAJANTE</a>
+          <a id="inicio" href="./home.html">INÍCIO</a>
+          <a href="./descubra.html">DESCUBRA</a>
+          <a id="sobreDev" href="sobreDevLogado.html">SOBRE O DEV</a>
+          <a id="loginHeader" href="./login.html">LOGIN</a>
         </nav>
-    </header>
+      </header>
 
 
     <section class="nomePais">
@@ -86,7 +87,7 @@
         <div class="footer-section">
             <h3>Institucional:</h3>
             <ul>
-                <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
+                <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -99,3 +100,22 @@
 </body>
 
 </html>
+<script>
+    let textoInicio = inicio
+    let sobreMim = sobreDev
+    let perfilViajante = perfilViajanteHeader
+    let login = loginHeader
+    let icone = iconeDirecionamento
+    let sobre = sobreFooter
+    if (sessionStorage.ID_USUARIO == null) {
+        perfilViajante.style = 'display: none'
+        textoInicio.href = './index.html'
+        sobreMim.href = './sobreDev.html'
+        icone.href = './index.html'
+        sobre.href = './sobreDev.html'
+  }
+
+  if(sessionStorage.ID_USUARIO != null){
+    login.style = 'display: none'
+  }
+</script>

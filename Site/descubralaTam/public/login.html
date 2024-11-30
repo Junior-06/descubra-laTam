@@ -58,6 +58,20 @@
       function entrar() {
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        let temArroba = false
+
+        for(
+            let posiçãoNoEmail = 0;
+            posiçãoNoEmail < emailVar.length;
+            posiçãoNoEmail ++
+        ){
+            let caractereAtual = emailVar[posiçãoNoEmail]
+            if(caractereAtual == "@"){
+                temArroba = true
+            }
+        }
+
+        if(temArroba == false) alert("O email precisa conter um @")
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -87,7 +101,7 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login! Verifique a senha");
                 resposta.text().then(texto => {
                     console.error(texto);
                 });

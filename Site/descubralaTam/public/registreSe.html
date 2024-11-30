@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,12 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/registreSe.css">
 </head>
+
 <body>
     <header>
         <div class="logo"><a href="./index.html">
-            <img src="./imgs/logoSemFundo.png" alt="Logo">
-        </a> </div>
+                <img src="./imgs/logoSemFundo.png" alt="Logo">
+            </a> </div>
         <nav class="navbar">
             <a href="./index.html">INÍCIO</a>
             <a href="./descubra.html">DESCUBRA</a>
@@ -22,49 +24,73 @@
         </nav>
     </header>
 
-<section class="banner">
-    <div class="conteudoBanner">
-        <img src="./imgs/adicionar-usuario.png" alt="Ícone de usuário" class="user-icon">
-        <div class="textoLogin">
-            <b><p>Digite o nome de usuário</p></b>
-            <input type="text" placeholder="Usuário" id="cadastro_nome_input">
-            <b> <p class="email">Insira seu E-mail</p></b>
-            <input type="text" placeholder="E-mail" id="cadastro_email_input">
-            <b><p class="senha">Insira a senha</p></b>
-            <input type="password" placeholder="Senha" id="cadastro_senha_input">
-            <b><p class="senha">Confirme a senha</p></b>
-            <input type="password" placeholder="Digite a mesma senha" id="confirmacao_senha_input"> <br>
-            <button onclick="cadastrar()" class="botao">
-                Prossiga
-            </button>
-          </div>      
-    </div>
-</section>
+    <section class="banner">
+        <div class="conteudoBanner">
+            <img src="./imgs/adicionar-usuario.png" alt="Ícone de usuário" class="user-icon">
+            <div class="textoLogin">
+                <b>
+                    <p>Digite o nome de usuário</p>
+                </b>
+                <input type="text" placeholder="Usuário" id="cadastro_nome_input">
+                <b>
+                    <p class="email">Insira seu E-mail</p>
+                </b>
+                <input type="text" placeholder="E-mail" id="cadastro_email_input">
+                <b>
+                    <p class="senha">Insira a senha</p>
+                </b>
+                <input type="password" placeholder="Senha" id="cadastro_senha_input">
+                <b>
+                    <p class="senha">Confirme a senha</p>
+                </b>
+                <input type="password" placeholder="Digite a mesma senha" id="confirmacao_senha_input"> <br>
+                <button onclick="cadastrar()" class="botao">
+                    Prossiga
+                </button>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <div class="footer-section">
-        <h3>Institucional:</h3>
-        <ul>
-            <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
-        </ul>
-    </div>
-    <div class="footer-section">
-        <h3>Conteúdo para você:</h3>
-        <ul>
-            <li><a href="./descubra.html">Guia de destinos</a></li>
-        </ul>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a href="./sobreDev.html">Sobre o autor/dev</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
+
 </html>
 <script>
-    
+
     function cadastrar() {
         // aguardar();
         var nomeVar = cadastro_nome_input.value;
         var emailVar = cadastro_email_input.value;
         var senhaVar = cadastro_senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        let temArroba = false
+
+        for (
+            let posiçãoNoEmail = 0;
+            posiçãoNoEmail < emailVar.length;
+            posiçãoNoEmail++
+        ) {
+            let caractereAtual = emailVar[posiçãoNoEmail]
+            if (caractereAtual == "@") {
+                temArroba = true
+            }
+        }
+
+        if (temArroba == false) alert("O email precisa conter um @")
+
 
         if (senhaVar != confirmacaoSenhaVar) {
             alert('ATENÇÃO! As senha digitadas deve ser iguais');
