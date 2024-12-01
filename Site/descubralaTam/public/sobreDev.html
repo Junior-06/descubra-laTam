@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sobre o Dev</title>
     <link rel="icon" href="./imgs/logo2.png">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/sobreDev.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="logo"><a id="iconeDirecionamento" href="./home.html">
-            <img src="./imgs/logoSemFundo.png" alt="Logo">
-        </a> </div>
+                <img src="./imgs/logoSemFundo.png" alt="Logo">
+            </a> </div>
         <nav class="navbar">
             <a href="./index.html">INÍCIO</a>
             <a href="./descubra.html">DESCUBRA</a>
@@ -22,32 +28,34 @@
         </nav>
     </header>
 
-    <section2>
+
+
+    <section class="banner">
         <div class="imgEtexto1">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto1">
+            <img src="./imgs/fotoMinha.jpeg" alt="Bandeira do Brasil" class="foto1">
             <div class="Texto1">
-                <b><p class="paragrafo1">Meu nome é Junior, tenho 19 anos e sou apaixonado por viagens, especialmente pelos países da América Latina. Desenvolvi esse carinho assistindo a documentários quando criança e ouvindo sobre as viagens da minha irmã. A Descubra LATAM surgiu com o objetivo de inspirar nas pessoas o mesmo desejo e entusiasmo que sinto por explorar novos lugares.Os países que já tive o prazer de conhecer são o Brasil e o Uruguai. Sou apaixonado pelo Brasil em todos os sentidos: pela comida, pelo clima, pela música, pelas pessoas, pela história... Tudo que envolve as terras tupiniquins desperta meu interesse.
-                    O Uruguai surgiu como uma surpresa, pois não sabia que teria a oportunidade de ir, mas acabei indo. E não há palavras para descrever: é um país tão lindo quanto o Brasil. Com paisagens incríveis, pessoas acolhedoras como as daqui, uma comida deliciosa e uma cultura rica, o Uruguai me encantou. É, sem dúvida, um lugar que pretendo visitar novamente.
-                </p></b>
-                </div>
+             <i><h1 class="titulo">Sobre Mim</h1></i>
+                <b>
+                    <p class="paragrafo1">Meu nome é Junior, tenho 19 anos sou nascido em muriaé (MG) e criado em Mauá e
+                        sou apaixonado por viagens, especialmente pelos países da América Latina. Desenvolvi esse
+                        carinho assistindo a documentários quando criança e ouvindo sobre as viagens da minha irmã. A
+                        DescubraLatam surgiu com o objetivo de inspirar nas pessoas o mesmo desejo e entusiasmo que
+                        sinto por explorar novos lugares, conhecer novas culturas e mostrar que existem paisagens belas
+                        e destinos interessantes também em nosso continente. Os países que já tive o prazer de conhecer
+                        são o Brasil e o Uruguai. Sou apaixonado pelo Brasil em todos os sentidos: pela comida, pelo
+                        clima, pela música, pelas pessoas, pela história... Tudo que envolve as terras tupiniquins
+                        desperta meu interesse. <br>
+                        O Uruguai surgiu como uma surpresa, pois não sabia que teria a oportunidade de ir, mas acabei
+                        indo. E não há palavras para descrever: é um país tão lindo quanto o Brasil. Com paisagens
+                        incríveis, pessoas acolhedoras como as daqui, uma comida deliciosa e uma cultura rica, o Uruguai
+                        me encantou. E, sem dúvidas, é um lugar que pretendo visitar novamente.
+                    </p>
+                    <p class="lerMais" onclick="lerMais()">ler mais...</p>
+                </b>
+            </div>
         </div>
 
-        <div class="imgEtexto2">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto2">
-            <div class="Texto2">
-                <b><p class="paragrafo2">
-                    
-                </p></b>
-                </div>
-        </div>
 
-        <div class="imgEtexto3">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto3">
-            <div class="Texto3">
-                <b><p class="paragrafo3">
-                </p></b>
-                </div>
-        </div>
     </section>
 
     <footer>
@@ -65,4 +73,10 @@
         </div>
     </footer>
 </body>
+
 </html>
+<script>
+    function lerMais(){
+        alert("Para ler mais faça o login primeiro")
+    }
+</script>

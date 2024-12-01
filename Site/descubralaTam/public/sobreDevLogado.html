@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sobre o Dev Log</title>
     <link rel="icon" href="./imgs/logo2.png">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/sobreDev.css">
+    <link rel="stylesheet" href="./styles/sobreDevLogado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="logo"><a id="iconeDirecionamento" href="./home.html">
@@ -22,39 +28,66 @@
         </nav>
       </header>
 
-    <section2>
+
+
+    <section class="banner" id="banner">
         <div class="imgEtexto1">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto1">
+            <div class="fotos">
+                <img src="./imgs/fotoMinha.jpeg" class="foto1" style="display: block;" id="img_foto1"> 
+                <div class="seta-esquerda" onclick="imagemAnterior()"><img src="./imgs/setaEsq.png"></div>
+                <div class="seta-direita" onclick="imagemSeguinte()"><img src="./imgs/setaDir.png"></div>
+            </div>
             <div class="Texto1">
-                <b><p class="paragrafo1">Meu nome é Junior, tenho 19 anos e sou apaixonado por viagens, especialmente pelos países da América Latina. Desenvolvi esse carinho assistindo a documentários quando criança e ouvindo sobre as viagens da minha irmã. A Descubra LATAM surgiu com o objetivo de inspirar nas pessoas o mesmo desejo e entusiasmo que sinto por explorar novos lugares.Os países que já tive o prazer de conhecer são o Brasil e o Uruguai. Sou apaixonado pelo Brasil em todos os sentidos: pela comida, pelo clima, pela música, pelas pessoas, pela história... Tudo que envolve as terras tupiniquins desperta meu interesse.
-                    O Uruguai surgiu como uma surpresa, pois não sabia que teria a oportunidade de ir, mas acabei indo. E não há palavras para descrever: é um país tão lindo quanto o Brasil. Com paisagens incríveis, pessoas acolhedoras como as daqui, uma comida deliciosa e uma cultura rica, o Uruguai me encantou. É, sem dúvida, um lugar que pretendo visitar novamente.
-                </p></b>
-                </div>
+                <i>
+                    <h1 class="titulo">Sobre Mim</h1>
+                </i>
+                <b>
+                    <p class="paragrafo1">Meu nome é Junior, tenho 19 anos sou nascido em muriaé (MG) e criado em Mauá e
+                        sou apaixonado por viagens, especialmente pelos países da América Latina. Desenvolvi esse
+                        carinho assistindo a documentários quando criança e ouvindo sobre as viagens da minha irmã. A
+                        DescubraLatam surgiu com o objetivo de inspirar nas pessoas o mesmo desejo e entusiasmo que
+                        sinto por explorar novos lugares, conhecer novas culturas e mostrar que existem paisagens belas
+                        e destinos interessantes também em nosso continente. Os países que já tive o prazer de conhecer
+                        são o Brasil e o Uruguai. Sou apaixonado pelo Brasil em todos os sentidos: pela comida, pelo
+                        clima, pela música, pelas pessoas, pela história... Tudo que envolve as terras tupiniquins
+                        desperta meu interesse. <br>
+                        O Uruguai surgiu como uma surpresa, pois não sabia que teria a oportunidade de ir, mas acabei
+                        indo. E não há palavras para descrever: é um país tão lindo quanto o Brasil. Com paisagens
+                        incríveis, pessoas acolhedoras como as daqui, uma comida deliciosa e uma cultura rica, o Uruguai
+                        me encantou. E, sem dúvidas, é um lugar que pretendo visitar novamente.
+                    </p>
+
+                    <p class="lerMais" onclick="lerMais()" id="texto_lerMais" style="display: block;">Ler mais...</p>
+
+                    <p class="paragrafo1" id="texto_paragrafo2" style="display: none;">Gostei muito do Uruguai pela
+                        semelhança com o Brasil, não só em Punta del Este, que é repleto de praias, mas também em
+                        Montevidéu, que me deu um sentimento de casa, pois é muito parecido com São Paulo. É uma cidade
+                        muito grande e muito bonita, pelo menos para mim, que gosto de arquitetura e essas coisas (acho
+                        que é coisa de gente de roça kk). Acabei passando mais tempo em Montevidéu, e é incrível como,
+                        apesar de parecer muito com São Paulo, o ritmo é muito reduzido: não tem tanto barulho, não é
+                        tanta bagunça. <br>
+                        Gosto de dizer que essa viagem ao Uruguai foi um divisor de águas, pois ela me colocou novos
+                        objetivos na vida e acabou mudando alguns antigos. Foi aí que a Descubra LATAM entrou. A ida ao
+                        Uruguai me deixou pensando: por que querer conhecer primeiro os países distantes do Brasil sendo
+                        que há paisagens e destinos incríveis a serem descobertos aqui no nosso quintal (América
+                        Latina)? Desde então, quando se refere a viagens, meus objetivos mudaram para conhecer primeiro
+                        todos os países da nossa parte do continente e depois expandir ao mundo. Venha acompanhar essa
+                        aventura e se aventure comigo pela LATAM.
+                    </p>
+
+                    <p class="lerMais" onclick="lerMenos()" id="texto_lerMenos" style="display: none;">Ler Menos...</p>
+                </b>
+            </div>
         </div>
 
-        <div class="imgEtexto2">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto2">
-            <div class="Texto2">
-                <b><p class="paragrafo2">
-                    
-                </p></b>
-                </div>
-        </div>
 
-        <div class="imgEtexto3">
-            <img src="./imgs/buenosAires.jpg" alt="Bandeira do Brasil" class="foto3">
-            <div class="Texto3">
-                <b><p class="paragrafo3">
-                </p></b>
-                </div>
-        </div>
     </section>
 
     <footer>
         <div class="footer-section">
             <h3>Institucional:</h3>
             <ul>
-                <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
+                <li><a href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -65,4 +98,51 @@
         </div>
     </footer>
 </body>
+
 </html>
+<script>
+
+
+    function lerMais() {
+        let paragrafo2 = texto_paragrafo2
+        let lerMais = texto_lerMais
+        let tamanhoBanner = banner
+        let lerMenos = texto_lerMenos
+
+        paragrafo2.style = 'display: block'
+        lerMais.style = 'display: none'
+        lerMenos.style = 'display: block'
+        tamanhoBanner.style = 'height: 600px;'
+    }
+
+    function lerMenos() {
+        let paragrafo2 = texto_paragrafo2
+        let lerMais = texto_lerMais
+        let tamanhoBanner = banner
+        let lerMenos = texto_lerMenos
+
+        paragrafo2.style = 'display: none'
+        lerMais.style = 'display: block'
+        lerMenos.style = 'display: none'
+        tamanhoBanner.style = 'height: 540px;'
+    }
+
+    const imagens = ["./imgs/fotoMinha.jpeg","./imgs/fotoUruguai1.jpeg","./imgs/fotoUruguai2.jpeg","./imgs/fotoUruguai3.jpeg","./imgs/fotoUruguai4.jpeg","./imgs/fotoUruguai5.jpeg","./imgs/fotoUruguai6.jpeg","./imgs/fotoUruguai7.jpeg","./imgs/fotoUruguai8.jpeg","./imgs/fotoUruguai9.jpeg","./imgs/fotoUruguai10.jpeg","./imgs/fotoUruguai11.jpeg","./imgs/fotoUruguai12.jpeg","./imgs/fotoUruguai13.jpeg","./imgs/fotoUruguai14.jpeg","./imgs/fotoUruguai15.jpeg","./imgs/fotoUruguai16.jpeg","./imgs/fotoUruguai17.jpeg","./imgs/fotoUruguai18.jpeg","./imgs/fotoUruguai19.jpeg","./imgs/fotoUruguai20.jpeg","./imgs/fotoUruguai21.jpeg"]
+
+    let indiceAtual = 0
+
+    function atualizarImagem(){
+        const img = document.getElementById("img_foto1")
+        img.src = imagens[indiceAtual]
+    }
+
+    function imagemSeguinte(){
+     indiceAtual = (indiceAtual + 1) % imagens.length
+     atualizarImagem()
+    }
+
+    function imagemAnterior(){
+        indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length
+        atualizarImagem()
+}
+</script>

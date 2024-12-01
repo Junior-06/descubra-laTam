@@ -160,7 +160,7 @@
         <li><span class="paisLink"><a href="./telaNicaragua.html">5. Nicaragua</a></span></li>
       </div>`
             }
-            if((pontosA == pontosB && pontosA == pontosC && pontosA == pontosD) || pontosC == pontosD || pontosA == pontosB){   
+            if(pontosA == pontosB && pontosA == pontosC && pontosA == pontosD || (pontosC == pontosD && pontosB == 0 && pontosA == 0) || (pontosA == pontosB && pontosC == 0 && pontosD == 0)){   
               textoPerfil.innerHTML = `Viajante versátil`
                caixaTextoPerfil.style = 'width: 300px;'
                          imagem.src = './imgs/viajanteVersatil.webp'
@@ -173,7 +173,7 @@
       </div>`
             }
 
-            if(pontosA == pontosC || pontosC == pontosA){
+            if(pontosA == pontosC && pontosB == 0 && pontosD == 0){
               textoPerfil.innerHTML = `Explorador de Luxo`
                caixaTextoPerfil.style = 'width: 300px;'
                          imagem.src = './imgs/viajanteLuxuoso.webp'
@@ -185,7 +185,7 @@
         <li><span class="paisLink"><a href="./telaPeru.html">5. Peru</a></span></li>
       </div>`
             }
-            if(pontosA == pontosD || pontosD == pontosA){
+            if(pontosA == pontosD && pontosB == 0 && pontosC == 0){
               textoPerfil.innerHTML = `Aventureiro Econômico`
                caixaTextoPerfil.style = 'width: 300px;'
                          imagem.src = './imgs/viajanteEconomico.webp'
@@ -197,7 +197,7 @@
         <li><span class="paisLink"><a href="./telaSuriname.html">5. Suriname</a></span></li>
       </div>`
             }
-            if(pontosB == pontosC || pontosC == pontosB){
+            if(pontosB == pontosC && pontosA == 0 && pontosD == 0){
               textoPerfil.innerHTML = `Culturalmente Luxuoso`
                caixaTextoPerfil.style = 'width: 300px;'
                          imagem.src = './imgs/viajanteLuxuoso.webp'
@@ -209,7 +209,7 @@
         <li><span class="paisLink"><a href="./telaCuba.html">5. Cuba</a></span></li>
       </div>`
     }
-            if(pontosB == pontosD || pontosD == pontosB){
+            if(pontosB == pontosD && pontosA == 0 && pontosC == 0){
               textoPerfil.innerHTML = `Explorador Cultural Econômico`
                caixaTextoPerfil.style = 'width: 300px;'
                          imagem.src = './imgs/viajanteEconomico.webp'
