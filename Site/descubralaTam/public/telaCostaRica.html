@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo a Costa Rica</title>
+    <link rel="icon" href="./imgs/logo2.png">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/telaDePaises.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a id="iconeDirecionamento" href="./home.html">
+                <img src="./imgs/logoSemFundo.png" alt="Logo">
+            </a> </div>
+        <nav class="navbar">
+            <a id="perfilViajanteHeader" href="./seletorPais.html">PERFIL DE VIAJANTE</a>
+            <a id="inicio" href="./home.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a id="sobreDev" href="sobreDevLogado.html">SOBRE O DEV</a>
+            <a id="loginHeader" href="./login.html">LOGIN</a>
+        </nav>
+    </header>
+
+
+    <section class="nomePais">
+        <div class="banner-overlay">
+            <img src="./imgs/costaRicaFoto3.jpg">
+            <p>Costa Rica</p>
+        </div>
+    </section>
+
+    <div class="banner">
+        <div class="imgEinfoSection">
+            <div class="info-section">
+                <b>
+                    <p class="textoPais">Costa Rica, um paraíso tropical que encanta com sua biodiversidade exuberante e cultura vibrante! Este país fascinante é um refúgio de belezas naturais, florestas tropicais densas e praias deslumbrantes. Desde as montanhas e vulcões até as costas banhadas por dois oceanos, a Costa Rica oferece uma experiência única e inesquecível.
+                        Para os amantes de natureza e aventura, a Costa Rica é um verdadeiro tesouro. O Parque Nacional Manuel Antonio combina praias de areia branca com uma rica vida selvagem, incluindo macacos, preguiças e inúmeros pássaros. A Reserva Biológica de Monteverde é famosa por suas trilhas em meio à floresta nublada, onde é possível avistar quetzais e outras espécies raras. Não deixe de visitar o vulcão Arenal, onde trilhas deslumbrantes e fontes termais naturais aguardam os visitantes.</p>
+                </b>
+            </div>
+            <img src="./imgs/costaRicaFoto2.webp" alt="Mapa do Chile" class="flag">
+        </div>
+
+        <div class="imgEinfoSection2">
+            <img src="./imgs/costaRicaFoto1.webp" alt="Paisagem chilena" class="flag2">
+            <div class="info-section2">
+                <b>
+                    <p class="textoPais2">Os apaixonados por cultura encontrarão na Costa Rica uma rica tapeçaria de tradições e história. A capital San José abriga museus fascinantes, como o Museu do Ouro Pré-Colombiano e o Museu Nacional, que oferecem uma visão sobre o passado e o presente do país. Explore as tradições locais em pequenas vilas, onde festas e danças típicas celebram a herança cultural costarriquense.
+                        A Costa Rica também é um destino perfeito para os gourmets. A culinária costarriquense é uma deliciosa combinação de sabores frescos e ingredientes locais. Experimente pratos tradicionais como o gallo pinto, uma mistura de arroz e feijão, o casado, um prato completo com arroz, feijão, carne e salada, e não deixe de provar as frutas tropicais frescas que são abundantes na região.                  
+                        Além das maravilhas naturais e culturais, a hospitalidade calorosa dos costarriquenses torna a visita ainda mais especial. O conceito de "Pura Vida," que significa "vida pura" ou "vida simples," está profundamente enraizado na cultura local e reflete a abordagem descontraída e positiva dos costarriquenses em relação à vida.
+                  </p>
+                </b>
+            </div>
+        </div>
+
+        <div class="atraçãoTuristica">
+            <div class="listaAtração">
+                <ul>
+                    <p class="pontosTuristicosTexto">Pontos turísticos</p>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Parque+Nacional+Manuel+Antonio&sourceid=chrome&ie=UTF-8">Parque Nacional Manuel Antonio</a></span>
+                    </li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Vulc%C3%A3o+Arenal&sourceid=chrome&ie=UTF-8">Vulcão Arenal</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Reserva+Biol%C3%B3gica+de+Monteverde&sourceid=chrome&ie=UTF-8">Reserva Biológica de Monteverde</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=tamarindo+costa+rica&sourceid=chrome&ie=UTF-8">Tamarindo</a></span>
+                    </li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Parque+Nacional+Tortuguero&sourceid=chrome&ie=UTF-8">Parque Nacional Tortuguero</a></span></li>
+                </ul>
+            </div>
+            <img src="./imgs/costaRicaFoto4.jpg" alt="Deserto do Atacama" class="imagemFim">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    let textoInicio = inicio
+    let sobreMim = sobreDev
+    let perfilViajante = perfilViajanteHeader
+    let login = loginHeader
+    let icone = iconeDirecionamento
+    let sobre = sobreFooter
+    if (sessionStorage.ID_USUARIO == null) {
+        perfilViajante.style = 'display: none'
+        textoInicio.href = './index.html'
+        sobreMim.href = './sobreDev.html'
+        icone.href = './index.html'
+        sobre.href = './sobreDev.html'
+    }
+
+
+    if (sessionStorage.ID_USUARIO != null) {
+        login.style = 'display: none'
+    }
+</script>

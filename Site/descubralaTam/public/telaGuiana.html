@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/telaDePaises.css">
 </head>
+
 <body>
     <header>
         <div class="logo"><a id="iconeDirecionamento" href="./home.html">
@@ -23,7 +25,66 @@
         </nav>
       </header>
 
+
+    <section class="nomePais">
+        <div class="banner-overlay">
+            <img src="./imgs/guiana francesa.jpg">
+            <p>GUIANA FRANCESA</p>
+        </div>
+    </section>
+
     <div class="banner">
+        <div class="imgEinfoSection">
+            <div class="info-section">
+                <b>
+                    <p class="textoPais">Guiana Francesa, um refúgio natural! Esse território encantador na América do Sul é um paraíso de biodiversidade, onde a floresta amazônica se funde com rios majestosos e uma cultura rica e diversa.
+                        Do encanto do folclore local à harmonia entre natureza e modernidade, a Guiana Francesa oferece uma experiência autêntica, repleta de aventura e descobertas.
+                        Venha explorar paisagens intocadas, uma gastronomia única e uma atmosfera tranquila, como em nenhum outro lugar. Descubra a Guiana Francesa.</p>
+                </b>
+            </div>
+            <img src="./imgs/guianaFoto1.jpg" alt="Mapa do Chile" class="flag">
+        </div>
+
+        <div class="imgEinfoSection2">
+            <img src="./imgs/guianaFoto2.webp" alt="Paisagem chilena" class="flag2">
+            <div class="info-section2">
+                <b>
+                    <p class="textoPais2">Para os amantes de aventura e natureza, o Chile é um destino fascinante, onde
+                        cada canto revela paisagens de tirar o fôlego. Desde a vibrante capital Santiago, repleta de
+                        cultura e história, até os majestosos cenários do Parque Nacional Torres del Paine, o Chile
+                        oferece experiências inesquecíveis. Não deixe de explorar o Deserto de Atacama, o mais árido do
+                        planeta, com suas paisagens lunares e cores impressionantes, ou a misteriosa Ilha de Páscoa,
+                        famosa pelas enigmáticas estátuas Moai, que guardam segredos de uma civilização antiga. O Chile
+                        é um convite para descobrir o contraste perfeito entre a natureza selvagem e a rica cultura
+                        local.</p>
+                </b>
+            </div>
+        </div>
+
+        <div class="atraçãoTuristica">
+            <div class="listaAtração">
+                <ul>
+                    <p class="pontosTuristicosTexto">Pontos turísticos</p>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Centro+Espacial+de+Kourou&sourceid=chrome&ie=UTF-8">Centro
+                                Espacial de Kourou</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Ilhas+da+Salva%C3%A7%C3%A3o&sourceid=chrome&ie=UTF-8">Ilhas
+                                da Salvação</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?sca_esv=93dba3a330e5cf9e&sxsrf=ADLYWIIrfe_y-vGCtq9Qi18k6aansJBGHA:1731367165904&q=Cath%C3%A9drale+Saint-Sauveur+de+Cayenne&spell=1&sa=X&ved=2ahUKEwjn5ZintdWJAxVUL7kGHQK3DqsQBSgAegQIHBAB&biw=1360&bih=679&dpr=1">Catedral
+                                de Saint-Sauveur</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?sca_esv=93dba3a330e5cf9e&sxsrf=ADLYWIJiww3Lf_VfcIvVQqyRrvU8z9-A4w:1731367263000&si=ACC90nxYhNno81_TzuVO0e1EieRzQwXK2DrwuMdAl3IyVcpNQ2sPNSMFDZTRlM-Q2W8F31mpuEo3mXZVoCErc-pxAaChKO6UvRLMfuPL7HWJR4CcUH8ZH1OPnOc-rhfGbaqoWqrj70juiXcbbmCYONLu-ablC1SUgHSU4UpHgYMbhyjyeVCDWN7BtAR_3r6j6fXtaq_ORwERfMgls07aWCBrzGNaTti31gOwx4zA6ArGhnu2r86XV-Tz9ZmJCLNH6yM2wqvKhEFSfog8FaBDH_XjE2CvHf0Ri8DygzzrpSlvzNJtBUWWHcE%3D&q=Zoo+de+Guyane&sa=X&ved=2ahUKEwi-ir_VtdWJAxUSK7kGHQrFOHIQs9oBKAB6BAglEBE&biw=1360&bih=679&dpr=1">Zoologico
+                                de Guiana</a></span></li>
+                </ul>
+            </div>
+            <img src="./imgs/guianaFoto3.jpg" alt="Deserto do Atacama" class="imagemFim">
+        </div>
+    </div>
+
+
+    <!-- <div class="banner">
         <h1>GUIANA FRANCESA</h1>
         <div class="info-section">
             <div class="images">
@@ -47,7 +108,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <footer>
         <div class="footer-section">
@@ -78,7 +139,8 @@
         sobreMim.href = './sobreDev.html'
         icone.href = './index.html'
         sobre.href = './sobreDev.html'
-  }
+        }
+
   
   if(sessionStorage.ID_USUARIO != null){
     login.style = 'display: none'

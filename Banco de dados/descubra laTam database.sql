@@ -2,8 +2,6 @@ create database descubralatam;
 
 use descubralatam;
 
-drop table usuario;
-
 create table usuario(
 idUsuario int primary key auto_increment,
 nome varchar(50),

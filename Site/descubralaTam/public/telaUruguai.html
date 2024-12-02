@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo ao Uruguai</title>
+    <link rel="icon" href="./imgs/logo2.png">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/telaDePaises.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a id="iconeDirecionamento" href="./home.html">
+                <img src="./imgs/logoSemFundo.png" alt="Logo">
+            </a> </div>
+        <nav class="navbar">
+            <a id="perfilViajanteHeader" href="./seletorPais.html">PERFIL DE VIAJANTE</a>
+            <a id="inicio" href="./home.html">INÍCIO</a>
+            <a href="./descubra.html">DESCUBRA</a>
+            <a id="sobreDev" href="sobreDevLogado.html">SOBRE O DEV</a>
+            <a id="loginHeader" href="./login.html">LOGIN</a>
+        </nav>
+    </header>
+
+
+    <section class="nomePais">
+        <div class="banner-overlay">
+            <img src="./imgs/urugaiFoto1.jpg">
+            <p>URUGUAI</p>
+        </div>
+    </section>
+
+    <div class="banner">
+        <div class="imgEinfoSection">
+            <div class="info-section">
+                <b>
+                    <p class="textoPais">Uruguai, um refúgio de tranquilidade e charme! Esse país encantador na América
+                        do Sul é um paraíso de belezas naturais, onde vastas pampas se encontram com praias douradas e
+                        uma cultura rica e acolhedora. Do encanto das suas tradições locais à harmonia entre natureza e
+                        modernidade, o Uruguai oferece uma experiência autêntica, repleta de aventura e descobertas.</p>
+                </b>
+            </div>
+            <img src="./imgs/urugaiFoto2.webp" alt="Mapa do Chile" class="flag">
+        </div>
+
+        <div class="imgEinfoSection2">
+            <img src="./imgs/urugaiFoto3.jpg" alt="Paisagem chilena" class="flag2">
+            <div class="info-section2">
+                <b>
+                    <p class="textoPais2">Venha explorar paisagens serenas, uma gastronomia deliciosa e uma atmosfera
+                        descontraída, como em nenhum outro lugar. Descubra o Uruguai. Para os amantes de aventura e
+                        natureza, o Uruguai é um destino fascinante, onde cada canto revela paisagens de tirar o fôlego.
+                        Desde a vibrante capital Montevidéu, repleta de cultura e história, até os cenários tranquilos
+                        de Punta del Este, o Uruguai oferece experiências inesquecíveis. Não deixe de explorar a cidade
+                        histórica de Colônia do Sacramento, com suas ruas de paralelepípedos e arquitetura colonial, ou
+                        as praias paradisíacas de Rocha, famosas por suas paisagens deslumbrantes. O Uruguai é um
+                        convite para descobrir o contraste perfeito entre a natureza serena e a rica cultura local.
+                    </p>
+                </b>
+            </div>
+        </div>
+
+        <div class="atraçãoTuristica">
+            <div class="listaAtração">
+                <ul>
+                    <p class="pontosTuristicosTexto">Pontos turísticos</p>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Montevid%C3%A9u&sourceid=chrome&ie=UTF-8">Montevidéu</a></span>
+                    </li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Punta+del+Este&sourceid=chrome&ie=UTF-8">Punta
+                                del Este</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Col%C3%B4nia+do+Sacramento&sourceid=chrome&ie=UTF-8">Colônia
+                                do Sacramento</a></span></li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Casapueblo&sourceid=chrome&ie=UTF-8">Casapueblo</a></span>
+                    </li>
+                    <li><span class="direcionamentoPesquisa"><a
+                                href="https://www.google.com/search?q=Cabo+Polonio&sourceid=chrome&ie=UTF-8">Cabo Polonio</a></span></li>
+                </ul>
+            </div>
+            <img src="./imgs/urugaiFoto4.webp" alt="Deserto do Atacama" class="imagemFim">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h3>Institucional:</h3>
+            <ul>
+                <li><a id="sobreFooter" href="./sobreDevLogado.html">Sobre o autor/dev</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Conteúdo para você:</h3>
+            <ul>
+                <li><a href="./descubra.html">Guia de destinos</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    let textoInicio = inicio
+    let sobreMim = sobreDev
+    let perfilViajante = perfilViajanteHeader
+    let login = loginHeader
+    let icone = iconeDirecionamento
+    let sobre = sobreFooter
+    if (sessionStorage.ID_USUARIO == null) {
+        perfilViajante.style = 'display: none'
+        textoInicio.href = './index.html'
+        sobreMim.href = './sobreDev.html'
+        icone.href = './index.html'
+        sobre.href = './sobreDev.html'
+    }
+
+
+    if (sessionStorage.ID_USUARIO != null) {
+        login.style = 'display: none'
+    }
+</script>
